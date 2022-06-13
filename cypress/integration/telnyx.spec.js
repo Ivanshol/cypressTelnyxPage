@@ -2,35 +2,9 @@
 
 const { should } = require("chai")
 import TelnyxPage from './page/TelnyxPage';
-import TelnyxAboutUsPage from './page/TelnyxAboutUsPage';
-import TelnyxAcceptableUsePolicyPage from './page/TelnyxAcceptableUsePolicyPage';
-import TelnyxBlogPage from './page/TelnyxBlogPage';
-import TelnyxCareersPage from './page/TelnyxCareersPage';
-import TelnyxCellularIoTPage from './page/TelnyxCellularIoTPage';
-import TelnyxCookiePolicyPage from './page/TelnyxCookiePolicyPage';
-import TelnyxDataAndPrivacyPage from './page/TelnyxDataAndPrivacyPage';
-import TelnyxElasticSIPTrunkingPage from './page/TelnyxElasticSIPTrunkingPage';
-import TelnyxGlobalNumbersPage from './page/TelnyxGlobalNumbersPage';
-import TelnyxNumberLookupPage from './page/TelnyxNumberLookupPage';
-import TelnyxPrivacyPolicyPage from './page/TelnyxPrivacyPolicyPage';
-import TelnyxProgrammableSMSPage from './page/TelnyxProgrammableSMSPage';
-import TelnyxReleaseNotesPage from './page/TelnyxReleaseNotesPage';
-import TelnyxReportAbusePage from './page/TelnyxReportAbusePage';
-import TelnyxResourceHubPage from './page/TelnyxResourceHubPage';
-import TelnyxSecureFaxingPage from './page/TelnyxSecureFaxingPage';
-import TelnyxSeeAllProductsPage from './page/TelnyxSeeAllProductsPage';
 import TelnyxSignUpPage from './page/TelnyxSignUpPage';
-import TelnyxSIPTrunkingPricingPage from './page/TelnyxSIPTrunkingPricingPage';
-import TelnyxSMSAPIPricingPage from './page/TelnyxSMSAPIPricingPage';
-import TelnyxVerifyAPIPage from './page/TelnyxVerifyAPIPage';
-import TelnyxVoiceAPIPage from './page/TelnyxVoiceAPIPage';
-import TelnyxWebsiteTermsAndConditionsPage from './page/TelnyxWebsiteTermsAndConditionsPage';
-import TelnyxWhatsAppAPIPage from './page/TelnyxWhatsAppAPIPage';
-import TelnyxWirelessPricingPage from './page/TelnyxWirelessPricingPage';
-import TelnyxVoiceAPIPricingPage from './page/TelnyxVoiceAPIPricingPage';
 import TelnyxContactUsPage from './page/TelnyxContactUsPage';
-import TelnyxVideoAPIPage from './page/TelnyxVideoAPIPage';
-import TelnyxStoragePage from './page/TelnyxStoragePage';
+import TelnyxFooter from './page/TelnyxFooter';
 
 context('Telnyx', () => {
 
@@ -44,174 +18,175 @@ context('Telnyx', () => {
     describe('Redmine website bottom products menu', () => {
 
       it('Should test bottom products menu Trunks Tab', () => {
-        TelnyxPage.clickBottomMenuTrunksTab();
-        TelnyxElasticSIPTrunkingPage.verifySIPTrunkingPage();
+        TelnyxFooter.clickFooterLink(products, sip-trunks, 2);
+        cy.get('[class="sc-31ce2512-5 locIEM"] strong').contains('SIP Trunks for ');
       })
 
       
-      xit('Should test bottom products menu Voice API Tab', () => {
-        TelnyxPage.clickBottomMenuVoiceAPITab();
-        TelnyxVoiceAPIPage.verifyVoiceAPIPage();
+      xit('Should test footer menu Voice API Tab', () => {
+        TelnyxFooter.clickFooterLink(products, voice-api, 2);
+        cy.get('[class="sc-31ce2512-5 locIEM"] span').contains('Voice API');
       })
 
 
       xit('Should test bottom products menu SMS API Tab', () => {
-        TelnyxPage.clickBottomMenuProgrammableSMSTab();
-        TelnyxProgrammableSMSPage.verifyProgrammableSMSPage();
+        TelnyxFooter.clickFooterLink(products, sms-api, 2);
+        cy.get('[class="sc-31ce2512-5 locIEM"] span').contains('SMS API');
       })
 
 
       xit('Should test bottom products menu WhatsApp API Tab', () => {
-        TelnyxPage.clickBottomMenuWhatsAppAPITab();
-        TelnyxWhatsAppAPIPage.verifyWhatsAppAPIPage();
+        TelnyxFooter.clickFooterLink(products, whatsapp-api, 0);
+        cy.get('[class="sc-31ce2512-5 locIEM"] span').contains('WhatsApp');
       })
 
       xit('Should test bottom products menu Secure Faxing Tab', () => {
-        TelnyxPage.clickBottomMenuSecureFaxingTab();
-        TelnyxSecureFaxingPage.verifySecureFaxingPage();
+        TelnyxFooter.clickFooterLink(products, fax-api, 0);
+        cy.get('[class="sc-31ce2512-5 locIEM"] span').contains('Programmable Fax API');
       })
 
       xit('Should test bottom products menu IoT Tab', () => {
-        TelnyxPage.clickBottomMenuCellularIoTTab();
-        TelnyxCellularIoTPage.verifyCellularIoTPage();
+        TelnyxFooter.clickFooterLink(products, iot-sim-card, 2);
+        cy.get('[class="sc-31ce2512-5 locIEM"] span').contains('IoT SIM Cards');
       })
 
 
       xit('Should test bottom products menu Number Lookup Tab', () => {
-        TelnyxPage.clickBottomMenuNumberLookupTab();
-        TelnyxNumberLookupPage.verifyNumberLookupPage();
+        TelnyxFooter.clickFooterLink(number-lookup, 1);
+        cy.get('[class="sc-31ce2512-5 locIEM"] span').contains('Phone Number Lookup');
       })
 
       xit('Should test bottom products menu Global Numbers Tab', () => {
-        TelnyxPage.clickBottomMenuGlobalNumbersTab();
-        TelnyxGlobalNumbersPage.verifyGlobalNumbersPage();
+        TelnyxFooter.clickFooterLink(products, phone-numbers, 1);
+        cy.get('[class="sc-31ce2512-5 locIEM"] span').contains('Get phone numbers on demand.');
       })
 
       xit('Should test bottom products menu  Verify API Tab', () => {
-        TelnyxPage.clickBottomMenuVerifyAPITab();
-        TelnyxVerifyAPIPage.verifyVerifyAPIPage();
+        TelnyxFooter.clickFooterLink(products, verify-api, 0);
+        cy.get('[class="sc-31ce2512-5 locIEM"] span').contains('Verify API:');
       })
 
       xit('Should test bottom products menu  See All Products Tab', () => {
-        TelnyxPage.clickBottomMenuAllProductsTab();
-        TelnyxSeeAllProductsPage.verifySeeAllProductsPage();
+        TelnyxFooter.clickFooterLink(products, 2);
+        cy.get('[class="Text-sc-5o8owa-0 sc-ce3c78c4-2 clNvhv juvWNo"]').contains('Products');
       })
     })
 
     describe('Redmine website bottom Resources menu', () => {
   
         xit('Should test bottom products menu  Blog Tab', () => {
-          TelnyxPage.clickBottomMenuBlogTab();
-          TelnyxBlogPage.verifyBlogPage();
+          TelnyxFooter.clickFooterLink(resources, 1);
+          cy.get('[class="Text-sc-5o8owa-0 sc-23cf8fb7-2 clNvhv iUbuxV"]').contains('Blog');
         })
 
         xit('Should test bottom products menu  Resource Hub Tab', () => {
-          TelnyxPage.clickBottomMenuResourceHubTab();
-          TelnyxResourceHubPage.verifyResourceHubPage();
+          TelnyxFooter.clickFooterLink(learn, 0);
+          cy.get('[class="Text-sc-5o8owa-0 sc-5160b4a4-2 clNvhv eafIwD"]').contains('Resource');
         })
 
         xit('Should test bottom products menu  Release notes Tab', () => {
-          TelnyxPage.clickBottomMenuReleaseNotesTab();
-          TelnyxReleaseNotesPage.verifyReleaseNotesPage();
+          TelnyxFooter.clickFooterLink(release-notes, 0);
+          cy.get('[class="Text-sc-5o8owa-0 sc-ce6dc8c9-2 gkWopw dbaFpf"]').contains('Release');
         })
       })
 
       describe('Redmine website bottom Pricing menu', () => {
         
         xit('Should test bottom pricing menu SIP Trunking Pricing Tab', () => {
-          TelnyxPage.clickBottomMenuTrunkingPricingTab();
-          TelnyxSIPTrunkingPricingPage.verifySIPTrunkingPricingPage();
+          TelnyxFooter.clickFooterLink(pricing, elastic-sip, 1);
+          cy.get('[class="Text-sc-5o8owa-0 sc-9480303f-2 clNvhv hWGRnZ"] span').contains('Trunk Pricing');
         })
 
         
         xit('Should test bottom pricing menu SMS API Pricing Tab', () => {
-          TelnyxPage.clickBottomMenuSMSPricingTab();
-          TelnyxSMSAPIPricingPage.verifySMSAPIPricingPage();
+          TelnyxFooter.clickFooterLink(pricing, messaging, 1);
+          cy.get('[class="Text-sc-5o8owa-0 sc-9480303f-2 clNvhv hWGRnZ"] span').contains('Messaging Pricing');
         })
 
         
         xit('Should test bottom pricing menu Voice API Pricing Tab', () => {
-          TelnyxPage.clickBottomMenuVoiceAPIPricingTab();
-          TelnyxVoiceAPIPricingPage.verifyVoiceAPIPricingPage();
+          TelnyxFooter.clickFooterLink(pricing, call-control, 1);
+          cy.get('[class="Text-sc-5o8owa-0 sc-9480303f-2 clNvhv hWGRnZ"] span').contains('API Pricing');
         })
 
         
         xit('Should test bottom pricing menu Wireless Pricing Tab', () => {
-          TelnyxPage.clickBottomMenuWirelessPricingTab();
-          TelnyxWirelessPricingPage.verifyWirelessPricingPage();
+          TelnyxFooter.clickFooterLink(pricing, wireless-pricing, 1);
+          cy.get('[class="Text-sc-5o8owa-0 sc-9480303f-2 clNvhv hWGRnZ"] span').contains('SIM Card & Data Pricing');
         })
 
       })
 
       describe('Redmine website bottom Company menu', () => {
         xit('Should test bottom company menu About Us Tab', () => {
-          TelnyxPage.clickBottomMenuAboutUsTab();
-          TelnyxAboutUsPage.verifyAboutUsPage();
+          TelnyxFooter.clickFooterLink(company, about, 0);
+          cy.get('[class="Text-sc-5o8owa-0 sc-f6d2e4fb-4 czgqGc dCnMZf"]').contains('About Us');
         })
 
         xit('Should test bottom company menu Careers Tab', () => {
-          TelnyxPage.clickBottomMenuCareersTab();
-          TelnyxCareersPage.verifyCareersPage();
+          TelnyxFooter.clickFooterLink(company, careers, 1);
+          cy.get('[class="Text-sc-5o8owa-0 sc-f6d2e4fb-4 czgqGc dCnMZf"]').contains('careers at telnyx');
         })
 
         xit('Should test bottom company menu Data And Privacy Tab', () => {
-          TelnyxPage.clickBottomMenuDataAndPrivacyTab();
-          TelnyxDataAndPrivacyPage.verifyDataAndPrivacyPage();
+          TelnyxFooter.clickFooterLink(company, data-privacy, 1);
+          cy.get('[class="sc-31ce2512-5 locIEM"] span').contains('Data & Privacy');
         })
 
         xit('Should test bottom company menu Report Abuse Tab', () => {
-          TelnyxPage.clickBottomMenuReportAbuseTab();
-          TelnyxReportAbusePage.verifyReportAbusePage();
+          TelnyxFooter.clickFooterLink(report-abuse, 0);
+          cy.get('[class="Text-sc-5o8owa-0 sc-256d2eeb-1 gkWopw gRMPsA"]').contains('Report Abuse');
         })
 
         xit('Should test bottom company menu Privacy Policy Tab', () => {
-          TelnyxPage.clickBottomMenuPrivacyPolicyTab();
-          TelnyxPrivacyPolicyPage.verifyPrivacyPolicyPage();
+          TelnyxFooter.clickFooterLink(privacy-policy, 0);
+          cy.get('[class="Text-sc-5o8owa-0 sc-d8f5e61f-1 gkWopw"]').contains('Privacy Policy')
         })
 
         xit('Should test bottom company menu Cookie Policy Tab', () => {
-          TelnyxPage.clickBottomMenuCookiePolicyTab();
-          TelnyxCookiePolicyPage.verifyCookiePolicyPage();
+          TelnyxFooter.clickFooterLink(cookie-policy, 0);
+          cy.get('[class="Text-sc-5o8owa-0 sc-d8f5e61f-1 gkWopw"]').contains('Cookie Policy');
         })
 
         xit('Should test bottom company menu Acceptable Use Policy Tab', () => {
-          TelnyxPage.clickBottomMenuAcceptableUsePolicyTab();
-          TelnyxAcceptableUsePolicyPage.verifyAcceptableUsePolicyPage();
+          TelnyxFooter.clickFooterLink(acceptable-use-policy, 0);
+          cy.get('[class="Text-sc-5o8owa-0 sc-d8f5e61f-1 gkWopw"]').contains('ACCEPTABLE USE POLICY');
         })
 
         xit('Should test bottom company menu Website Terms And Conditions Tab', () => {
-          TelnyxPage.clickBottomMenuWebsiteTermsTab();
-          TelnyxWebsiteTermsAndConditionsPage.verifyWebsiteTermsAndConditionsPage();
+          TelnyxFooter.clickFooterLink(terms-and-conditions, 0);
+          cy.get('[class="Text-sc-5o8owa-0 sc-d8f5e61f-1 gkWopw"]').contains('Terms and Conditions');
         })
       })
 
       describe('Redmine website SignUp page', () => {
         xit('Should test bottom mission control menu Sign Up', () => {
-          TelnyxPage.clickBottomMenuSigntUpTab();
-          TelnyxSignUpPage.verifySignUpPage();
+          TelnyxFooter.clickFooterLink(sign-up, 4);
+          cy.get('[class="Text-sc-5o8owa-0 sc-1e9319a3-4 gkWopw gjiitA"]').contains('Create a free account');
         })
 
         xit('Should negative test Sign Up function with empty inputs', () => {
-          TelnyxPage.clickBottomMenuSigntUpTab();
+          TelnyxFooter.clickFooterLink(sign-up, 4);
           TelnyxSignUpPage.pressCreateAccountButton();
-          TelnyxSignUpPage.verifyEmailErrorIsVisible();;
-          TelnyxSignUpPage.verifyNameErrorIsVisible();
+          cy.get('#email_error').should('be.visible');
+          cy.get('#full_name_error').should('be.visible');
         })
 
         xit('Should negative test Sign Up function with correct inputs but without password', () => {
-          TelnyxPage.clickBottomMenuSigntUpTab();
+          TelnyxFooter.clickFooterLink(sign-up, 4);
           TelnyxSignUpPage.inputCorrectEmailData();
           TelnyxSignUpPage.inputNameData();
           TelnyxSignUpPage.pressCreateAccountButton();
-          TelnyxSignUpPage.verifyPasswordRequirementsAreVisible();
+          cy.get('#password_requirements').should('be.visible');
         })
 
         xit('Should negative test Sign Up function with incorrect email input data', () => {
-          TelnyxPage.clickBottomMenuSigntUpTab();
+          TelnyxFooter.clickFooterLink(sign-up, 4);
           TelnyxSignUpPage.inputIncorrectEmailData()
           TelnyxSignUpPage.inputNameData();
           TelnyxSignUpPage.pressCreateAccountButton();
-          TelnyxSignUpPage.verifyIncorrectEmailDataIsRecognized();
+          cy.get('#email_error').should('be.visible');
+          cy.get('#email_error').contains('enter a valid email address.')
         })
       })
 
@@ -219,45 +194,45 @@ context('Telnyx', () => {
         xit('Should negative test Talk to an expert page function with empty data', () => {
         TelnyxPage.clickTalkToAnExpertButton();
         TelnyxContactUsPage.submitContactReasons();
-        TelnyxContactUsPage.verifyPageDidNotChangeWithEmptyInputs();
+        cy.url().should('eq', 'https://telnyx.com/contact-us');
         })
       })
 
       describe('Telnyx middle page buttons', () => {
         xit('Should test Messaging API button', () => {
-          TelnyxPage.scrollMessagingAPIButtonIntoView();
-          TelnyxPage.clickMessagingAPIButtonOnTheMiddleOfThePage();
-          TelnyxProgrammableSMSPage.verifyProgrammableSMSPage();
+          TelnyxPage.scrollMidPageButtonIntoView(0)
+          TelnyxPage.clickMidPageButton(0)
+          cy.get('[class="sc-31ce2512-5 locIEM"] span').contains('SMS API');
        })
 
         xit('Should test Video API button', () => {
-          TelnyxPage.scrollVideoAPIButtonIntoView()
-          TelnyxPage.clickVideoAPIButtonOnTheMiddleOfThePage();
-          TelnyxVideoAPIPage.verifyVideoAPIPage();
+          TelnyxPage.scrollMidPageButtonIntoView(1)
+          TelnyxPage.clickMidPageButton(1)
+          cy.get('[class="sc-31ce2512-5 locIEM"] span').contains('Build an integrated video solution');
        })
 
         xit('Should test Wireless button', () => {
-          TelnyxPage.scrollWirelessButtonIntoView();
-          TelnyxPage.clickWirelessButtonOnTheMiddleOfThePage();
-          TelnyxCellularIoTPage.verifyCellularIoTPage();
+          TelnyxPage.scrollMidPageButtonIntoView(2)
+          TelnyxPage.clickMidPageButton(2)
+          cy.get('[class="sc-31ce2512-5 locIEM"] span').contains('IoT SIM Cards');
       })
 
         xit('Should test Voice API button', () => {
-          TelnyxPage.scrollVoiceAPIButtonIntoView();
-          TelnyxPage.clickVoiceAPIButtonOnTheMiddleOfThePage();
-          TelnyxVoiceAPIPage.verifyVoiceAPIPage();
+          TelnyxPage.scrollMidPageButtonIntoView(3)
+          TelnyxPage.clickMidPageButton(3)
+          cy.get('[class="sc-31ce2512-5 locIEM"] span').contains('Voice API');
       })
 
         xit('Should test Elastic SIP Trunk button', () => {
-          TelnyxPage.scrollElasticSIPTrunkButtonIntoView();
-          TelnyxPage.clickElasticSIPTrunkButtonOnTheMiddleOfThePage();
-          TelnyxElasticSIPTrunkingPage.verifySIPTrunkingPage();
+          TelnyxPage.scrollMidPageButtonIntoView(4)
+          TelnyxPage.clickMidPageButton(4);
+          cy.get('[class="sc-31ce2512-5 locIEM"] strong').contains('SIP Trunks for ');
       })
 
         xit('Should test Storage button', () => {
-          TelnyxPage.scrollStorageButtonIntoView();
-          TelnyxPage.clickStorageButtonOnTheMiddleOfThePage();
-          TelnyxStoragePage.verifyStoragePage();
+          TelnyxPage.scrollMidPageButtonIntoView(5)
+          TelnyxPage.clickMidPageButton(5)
+          cy.get('[class="sc-31ce2512-5 locIEM"] span').contains('Better cloud storage,');
       })
       })
 })
