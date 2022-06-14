@@ -13,6 +13,11 @@
         "wdio-chromedriver-service": "^7.3.2"
     },
     "scripts": {
+        "preinstall": "npx npm-force-resolutions",
         "wdio": "wdio run wdio.conf.js"
-    }
+    },
+    
+    "resolutions": {
+        "node-sass": "https://registry.npmjs.org/node-sass/-/node-sass-7.0.0.tgz"
+      }
 }
