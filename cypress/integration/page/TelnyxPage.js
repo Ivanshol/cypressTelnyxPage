@@ -16,6 +16,10 @@ class TelnyxPage{
     verifyThatPageDidNotChangeBecauseOfIncorrectEmail(){
         cy.url().should('eq', 'https://telnyx.com/');
     }
+
+    scrollMidPageButtonIntoView(index){
+        cy.get('[class="sc-3e56386e-5 eVSvvX"]').eq(`${index}`).scrollIntoView();
+    }
     
     scrollMidPageButtonIntoView(index){
         cy.get('[class="sc-3e56386e-5 eVSvvX"]').eq(`${index}`).scrollIntoView();

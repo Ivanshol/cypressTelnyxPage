@@ -24,12 +24,14 @@ class TelnyxSignUpPage{
         cy.get('#email_error').contains('enter a valid email address.')
     }
 
-    inputCorrectEmailData(){
-        cy.get('#email').type('shivantesting@gmail.com');
+    inputEmailData(email){
+        cy.get('#email').type(`${email}`);
     }
 
-    inputNameData(){
-        cy.get('#full_name').type('Name Name');
+    inputNameData(name){
+        let myName = '';
+        myName = name.text();
+        cy.get('#full_name').type(myName);
     }
 
     verifyPasswordRequirementsAreVisible(){

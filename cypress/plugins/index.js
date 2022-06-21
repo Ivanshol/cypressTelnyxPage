@@ -19,4 +19,9 @@
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+      // executes function before running the test file - EXPERIMENTAL
+      on('before:spec', async () => {
+        let data = await webpageshelp.retrieveAndConvertXMLToJSON()
+        return fs.writeFileSync('data.json', data)
+      })
 }
