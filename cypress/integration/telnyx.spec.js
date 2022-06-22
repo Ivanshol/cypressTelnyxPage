@@ -72,7 +72,7 @@ context('Telnyx', () => {
         })
 
         it('Should negative test Sign Up function with correct inputs but without password', () => {
-          TelnyxFooter.clickFooterLink('sign-up');
+          TelnyxFooter.clickFooterLinkSingle('sign-up');
           TelnyxSignUpPage.inputEmailData(`shivantesting@gmail.com`);
           TelnyxSignUpPage.inputNameData('name');
           TelnyxSignUpPage.pressCreateAccountButton();
@@ -86,14 +86,6 @@ context('Telnyx', () => {
           TelnyxSignUpPage.pressCreateAccountButton();
           cy.get('#email_error').should('be.visible');
           cy.get('#email_error').contains('enter a valid email address.')
-        })
-      })
-
-      describe('Telnyx website Talk to an Expert page', () => {
-        it('Should negative test Talk to an expert page function with empty data', () => {
-        TelnyxPage.clickTalkToAnExpertButton();
-        TelnyxContactUsPage.submitContactReasons();
-        cy.url().should('eq', 'https://telnyx.com/contact-us');
         })
       })
 
