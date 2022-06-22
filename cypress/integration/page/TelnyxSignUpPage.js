@@ -1,10 +1,6 @@
 class TelnyxSignUpPage{
-    verifySignUpPage(){
-        cy.get('[class="Text-sc-5o8owa-0 sc-1e9319a3-4 gkWopw gjiitA"]').contains('Create a free account');
-    }
-
     pressCreateAccountButton(){
-        cy.get('[class="sc-5d3a275a-1 sc-5d3a275a-3 sc-5d3a275a-4 sc-5d3a275a-7 cSsJix fqfWHQ eUnEoi hBNXWZ"]').click();
+        cy.get('body form div div button').eq(1).click();
     }
 
     verifyEmailErrorIsVisible(){
@@ -25,13 +21,11 @@ class TelnyxSignUpPage{
     }
 
     inputEmailData(email){
-        cy.get('#email').type(`${email}`);
+        cy.get('#email').type(email);
     }
 
     inputNameData(name){
-        let myName = '';
-        myName = name.text();
-        cy.get('#full_name').type(myName);
+        cy.get('#full_name').type(name);
     }
 
     verifyPasswordRequirementsAreVisible(){

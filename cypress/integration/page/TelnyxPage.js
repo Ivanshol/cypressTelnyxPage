@@ -10,7 +10,7 @@ class TelnyxPage{
     }
 
     clickTryForFreeButton(){
-        cy.get('[class="sc-5d3a275a-2 krPznm"]').click();
+        cy.get('body form div div button').click();
     }
 
     verifyThatPageDidNotChangeBecauseOfIncorrectEmail(){
@@ -18,15 +18,11 @@ class TelnyxPage{
     }
 
     scrollMidPageButtonIntoView(index){
-        cy.get('[class="sc-3e56386e-5 eVSvvX"]').eq(`${index}`).scrollIntoView();
-    }
-    
-    scrollMidPageButtonIntoView(index){
-        cy.get('[class="sc-3e56386e-5 eVSvvX"]').eq(`${index}`).scrollIntoView();
+        cy.get('body div div h3').eq(`${index}`).scrollIntoView();
     }
 
     clickMidPageButton(index){
-        cy.get('[class="sc-3e56386e-5 eVSvvX"]').eq(`${index}`).click();
+        cy.get('body div div h3').eq(`${index}`).click();
     }
 
 }
