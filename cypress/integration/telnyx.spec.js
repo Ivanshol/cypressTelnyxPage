@@ -60,33 +60,29 @@ context('Telnyx', () => {
   
       describe('Redmine website SignUp page', () => {
         it('Should test bottom mission control menu Sign Up', () => {
-          cy.get('footer [href="/sign-up"]').click();
-          //TelnyxFooter.clickFooterLinkSingle(sign-up);
+          TelnyxFooter.clickFooterLinkSingle('sign-up');
           cy.get('[class="Text-sc-5o8owa-0 sc-1e9319a3-4 gkWopw gjiitA"]').contains('Create a free account');
         })
 
         it('Should negative test Sign Up function with empty inputs', () => {
-          cy.get('footer [href="/sign-up"]').click();
-          //TelnyxFooter.clickFooterLinkSingle(sign-up);
+          TelnyxFooter.clickFooterLinkSingle('sign-up');
           TelnyxSignUpPage.pressCreateAccountButton();
           cy.get('#email_error').should('be.visible');
           cy.get('#full_name_error').should('be.visible');
         })
 
         it('Should negative test Sign Up function with correct inputs but without password', () => {
-          cy.get('footer [href="/sign-up"]').click();
-          //TelnyxFooter.clickFooterLink(sign-up);
+          TelnyxFooter.clickFooterLink('sign-up');
           TelnyxSignUpPage.inputEmailData(`shivantesting@gmail.com`);
-          TelnyxSignUpPage.inputNameData(MyName);
+          TelnyxSignUpPage.inputNameData('name');
           TelnyxSignUpPage.pressCreateAccountButton();
           cy.get('#password_requirements').should('be.visible');
         })
 
         it('Should negative test Sign Up function with incorrect email input data', () => {
-          cy.get('footer [href="/sign-up"]').click();
-          //TelnyxFooter.clickFooterLink(sign-up);
+          TelnyxFooter.clickFooterLinkSingle('sign-up');
           TelnyxSignUpPage.inputIncorrectEmailData()
-          TelnyxSignUpPage.inputNameData(MyName);
+          TelnyxSignUpPage.inputNameData('name');
           TelnyxSignUpPage.pressCreateAccountButton();
           cy.get('#email_error').should('be.visible');
           cy.get('#email_error').contains('enter a valid email address.')
