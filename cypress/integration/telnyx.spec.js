@@ -3,11 +3,8 @@
 const { should } = require("chai")
 import TelnyxPage from './page/TelnyxPage';
 import TelnyxSignUpPage from './page/TelnyxSignUpPage';
+const {footerProductLinks, footerPricingLinks, footerCompanyLinks, footerLinks} = require('./page/TelnyxFooter')
 import TelnyxFooter from './page/TelnyxFooter';
-import footerProductLinks from './page/TelnyxFooter';
-import footerPricingLinks from './page/TelnyxFooter';
-import footerCompanyLinks from './page/TelnyxFooter';
-import footerLinks from './page/TelnyxFooter';
 
 context('Telnyx', () => {
 
@@ -15,8 +12,8 @@ context('Telnyx', () => {
       cy.visit('https://telnyx.com/');
       cy.get('body')
   .then($body => {
-    if ($body.find('[class="sc-5d3a275a-1 sc-5d3a275a-3 sc-5d3a275a-4 sc-5d3a275a-9 cSsJix fqfWHQ eUnEoi itIjRb"]').length) {
-      cy.get('[class="sc-5d3a275a-1 sc-5d3a275a-3 sc-5d3a275a-4 sc-5d3a275a-9 cSsJix fqfWHQ eUnEoi itIjRb"]').click(); 
+    if ($body.find('[aria-label="close and deny"] ~div>div>button').length) {
+      cy.get('[aria-label="close and deny"] ~div>div>button').click(); 
     }
     else{
 
@@ -31,25 +28,25 @@ context('Telnyx', () => {
       
     Array.from(footerProductLinks).forEach(footerLink => {
       it(`Should test the footer products ${footerLink} Tab`, () =>{
-          TelnyxFooter.verifyFooterLink(products, footerLink).contains(footerLink)
+          TelnyxFooter.verifyFooterLink('products', footerLink).should('include', footerLink)
       });
      });
 
   Array.from(footerPricingLinks).forEach(footerLink => {
       it(`Should test the footer products ${footerLink} Tab`, () =>{
-          TelnyxFooter.verifyFooterLink(pricing, footerLink).contains(footerLink)
+          TelnyxFooter.verifyFooterLink('pricing', footerLink).should('include', footerLink)
       });
   });
 
   Array.from(footerCompanyLinks).forEach(footerLink => {
       it(`Should test the footer products ${footerLink} Tab`, () =>{
-          TelnyxFooter.verifyFooterLink(company, footerLink).contains(footerLink)
+          TelnyxFooter.verifyFooterLink('company', footerLink).should('include', footerLink)
       });
   });
 
   Array.from(footerLinks).forEach(footerLink => {
-      it(`Should test the footer products ${footerLink} Tab`, () =>{
-          TelnyxFooter.verifyFooterLink(footerLink).contains(footerLink)
+      it.only(`Should test the footer products ${footerLink} Tab`, () =>{
+          TelnyxFooter.verifyFooterLinkSingle(footerLink).should('include', footerLink)
       });
   });
 
@@ -79,7 +76,7 @@ context('Telnyx', () => {
         })
 
         it('Should negative test Sign Up function with incorrect email input data', () => {
-          cy.get('footer [href="/sign-up"]').click();
+          TelnyxFooter.clickFooterLinkSingle('sign-up');
           TelnyxSignUpPage.inputIncorrectEmailData()
           TelnyxSignUpPage.inputNameData('name');
           TelnyxSignUpPage.pressCreateAccountButton();

@@ -1,12 +1,12 @@
-const footerProductLinks = [
+export const footerProductLinks = [
 'sip-trunks', 'voice-api', 'sms-api', 'whatsapp-api', 'fax-api', 'iot-sim-card', 'phone-numbers'
 , 'verify-api']
 
-const footerPricingLinks = ['elastic-sip', 'messaging', 'call-control', 'wireless-pricing']
+export const footerPricingLinks = ['elastic-sip', 'messaging', 'call-control', 'wireless-pricing']
 
-const footerCompanyLinks = ['about', 'careers', 'data-privacy']
+export const footerCompanyLinks = ['about', 'careers', 'data-privacy']
 
-const footerLinks = ['number-lookup', 'products', 'resources', 'learn', 'release-notes', 'report-abuse', 'privacy-policy', 
+export const footerLinks = ['number-lookup', 'products', 'resources', 'learn', 'release-notes', 'report-abuse', 'privacy-policy', 
 'cookie-policy', 'acceptable-use-policy', 'terms-and-conditions']
 
 class TelnyxElasticSIPTrunkingPage{
@@ -18,8 +18,8 @@ class TelnyxElasticSIPTrunkingPage{
         ).scrollIntoView().click();
     }
 
-    verifyFooterLink(menu) {
-        this.clickFooterLink(menu);
+    verifyFooterLinkSingle(menu) {
+        this.clickFooterLinkSingle(menu);
         return cy.url();
     }
 
