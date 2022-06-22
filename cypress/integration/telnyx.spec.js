@@ -88,7 +88,6 @@ context('Telnyx', () => {
         })
       })
 
-
       describe('Telnyx middle page buttons', () => {
         it('Should test Messaging API button', () => {
           TelnyxPage.scrollMidPageButtonIntoView(1)
