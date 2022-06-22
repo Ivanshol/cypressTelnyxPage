@@ -25,13 +25,11 @@ class TelnyxSignUpPage{
     }
 
     inputEmailData(email){
-        cy.get('#email').type(`${email}`);
+        cy.get('#email').type(email);
     }
 
     inputNameData(name){
-        let myName = '';
-        myName = name.text();
-        cy.get('#full_name').type(myName);
+        cy.get('#full_name').type(name);
     }
 
     verifyPasswordRequirementsAreVisible(){
